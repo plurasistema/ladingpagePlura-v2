@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plura - Turismo para todos, de verdade</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Plura - Informação para um turismo mais acessível. Estamos construindo uma iniciativa que organiza e compartilha informações reais sobre acessibilidade no turismo e no lazer.">
+    <meta name="keywords" content="turismo acessível, acessibilidade, turismo inclusivo, viagem acessível, lazer inclusivo">
+    <meta name="author" content="Plura">
+    <meta name="theme-color" content="#00BFA5">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com.br/">
+    <meta property="og:title" content="Plura - Turismo para todos, de verdade">
+    <meta property="og:description" content="Informação para um turismo mais acessível. Viajar e se divertir deveriam ser experiências possíveis para todo mundo. Cadastre-se e faça parte dessa mudança!">
+    <meta property="og:image" content="https://pradosuporte.com.br/plura/wpp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Plura - Turismo para todos, de verdade">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Plura">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://pradosuporte.com.br/plura/">
+    <meta name="twitter:title" content="Plura - Turismo para todos, de verdade">
+    <meta name="twitter:description" content="Informação para um turismo mais acessível. Viajar e se divertir deveriam ser experiências possíveis para todo mundo.">
+    <meta name="twitter:image" content="https://pradosuporte.com.br/plura/wpp.png">
+    
+    <!-- WhatsApp específico -->
+    <meta property="og:image:type" content="image/png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seusite.com.br/">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --plura-turquoise: #00BFA5;
+            --plura-yellow: #FFC107;
+            --plura-pink: #EC407A;
+            --plura-blue: #1E88E5;
+            --plura-dark: #1A1A2E;
+            --plura-light: #F8F9FA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--plura-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffeef8 100%);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0 60px;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--plura-turquoise) 0%, transparent 70%);
+            opacity: 0.15;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--plura-pink) 0%, transparent 70%);
+            opacity: 0.12;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+        
+        .logo-container {
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease-out;
+            display: inline-block;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--plura-dark);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #4A4A68;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--plura-turquoise), var(--plura-blue));
+            color: white;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 191, 165, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 191, 165, 0.4);
+            color: white;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--plura-turquoise), var(--plura-yellow), var(--plura-pink));
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .content-card h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--plura-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .content-card h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 70%;
+            background: var(--plura-turquoise);
+            border-radius: 3px;
+        }
+        
+        .content-card p {
+            font-size: 1.15rem;
+            margin-bottom: 1.3rem;
+            color: #4A4A68;
+        }
+        
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 191, 165, 0.1), rgba(30, 136, 229, 0.1));
+            border-left: 5px solid var(--plura-turquoise);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--plura-dark);
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 60px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 191, 165, 0.03), transparent);
+            pointer-events: none;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 10;
+            background: #000;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--plura-dark);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--plura-turquoise), var(--plura-pink));
+            border-radius: 3px;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 191, 165, 0.08), rgba(236, 64, 122, 0.08));
+        }
+        
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--plura-dark);
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: #4A4A68;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--plura-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .footer strong {
+            color: var(--plura-turquoise);
+            font-weight: 700;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 40px 30px;
+            }
+            
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+            
+            .logo-container img {
+                max-width: 280px;
+            }
+            
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 1.1rem;
+            }
+            
+            .highlight-box {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Accessibility improvements */
+        .cta-button:focus,
+        a:focus {
+            outline: 3px solid var(--plura-turquoise);
+            outline-offset: 3px;
+        }
+        
+        ::selection {
+            background: var(--plura-turquoise);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <div class="logo-container">
+                        <!-- LOGO: Substitua logo.png pela URL completa da sua logo (850x210px recomendado) -->
+                        <img src="logo.png" alt="Plura - Turismo para todos, de verdade">
+                    </div>
+                    <h1 class="hero-title">Informação para um turismo mais acessível</h1>
+                    <p class="hero-subtitle">
+                        Viajar e se divertir deveriam ser experiências possíveis para todo mundo.
+                        Estamos construindo uma iniciativa que organiza e compartilha informações reais sobre acessibilidade no turismo e no lazer.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkPt_EmyfQr-vqvqmC5yoM7hdbvblJsSjzynJgcNZGGTewLw/viewform" 
+                       class="cta-button" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Cadastrar no Plura">
+                        Faça parte dessa mudança
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="content-card">
+                        <h2>Por que o Plura existe?</h2>
+                        <p>
+                            Na prática, muitas pessoas deixam de aproveitar o turismo e o lazer por um motivo simples: 
+                            <strong>a falta de informação clara e confiável sobre acessibilidade.</strong>
+                        </p>
+                        <p>
+                            O Plura nasce para mudar esse cenário. Estamos construindo uma iniciativa focada em organizar 
+                            e compartilhar informações reais sobre acessibilidade no turismo e no lazer — ajudando pessoas 
+                            que precisam de acessibilidade a se sentirem mais seguras, confiantes e respeitadas ao planejar 
+                            suas experiências.
+                        </p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h2>Como funciona neste momento?</h2>
+                        <p>
+                            Neste primeiro momento, o Plura funciona como um <strong>canal de informação e escuta</strong>. 
+                            Através de conteúdos enviados por e-mail, vamos compartilhar as primeiras informações sobre 
+                            destinos, atrativos e fornecedores turísticos que já oferecem algum tipo de acessibilidade, 
+                            além de conteúdos educativos sobre o tema.
+                        </p>
+                        <p>
+                            Ao se cadastrar, você passa a fazer parte dessa construção desde o início.
+                        </p>
+                        <div class="highlight-box">
+                            Sua participação nos ajuda a entender melhor quais acessibilidades são mais importantes, 
+                            quais informações fazem falta e como podemos evoluir para uma ferramenta cada vez mais 
+                            útil, prática e inclusiva.
+                        </div>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h2>Nossa crença</h2>
+                        <p>
+                            O Plura acredita que <strong>acessibilidade não é exceção — é direito.</strong>
+                        </p>
+                        <p>
+                            E informação confiável é o primeiro passo para transformar o turismo em um espaço 
+                            mais humano, possível e acessível para todas as pessoas.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Conheça o Plura</h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t1HSyts6PyQ?si=SSPwJMHF4CC202py" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p style="color: #4A4A68; font-size: 0.95rem;">
+                    Problemas para visualizar o vídeo? 
+                    <a href="https://www.youtube.com/watch?v=t1HSyts6PyQ" target="_blank" rel="noopener noreferrer" style="color: var(--plura-turquoise); font-weight: 600; text-decoration: none;">
+                        Assista diretamente no YouTube
+                    </a>
+                </p>
+                <p style="color: #999; font-size: 0.85rem; margin-top: 0.5rem;">
+                    <small>Certifique-se de que o vídeo está configurado como "Público" ou "Não listado" nas configurações do YouTube e que a opção "Permitir incorporação" está ativada.</small>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Vamos construir juntos?</h2>
+                    <p>
+                        Cadastre-se para receber informações sobre acessibilidade no turismo e 
+                        ajude a construir um futuro mais inclusivo desde o início.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkPt_EmyfQr-vqvqmC5yoM7hdbvblJsSjzynJgcNZGGTewLw/viewform" 
+                       class="cta-button" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Cadastrar no Plura">
+                        Quero fazer parte
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Plura</strong> — Turismo para todos, de verdade.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
